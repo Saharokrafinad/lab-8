@@ -24,7 +24,7 @@ namespace simple_numbers {
 			do
 			{
 				ofst << i << ": ";
-				p->num->Out(ofst);    
+				p->num->Out(ofst);    /////// p->a  разименовываю и отправл€ю значение переменной 
 				p = p->next;
 				i++;
 			} while (p != this);
