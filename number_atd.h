@@ -7,13 +7,16 @@ namespace simple_numbers {
 	// явл€етс€ абстрактным, обеспечива€, тем самым,
 	// проверку интерфейса
 	class number {
+	//private:
+		string ed_izm;
 	public:
 		// иденитфикаци€, порождение и ввод числа из потока
 			static number* In(ifstream &ifst);
-		virtual void InData(ifstream &ifst) = 0; // ввод “јЅЋ»÷ј ¬»–“”јЋ№Ќџ’ ‘”Ќ ÷»…, 
+		virtual void InData(ifstream &ifst); // ввод “јЅЋ»÷ј ¬»–“”јЋ№Ќџ’ ‘”Ќ ÷»…, 
 		//при вызове обычных функций лезет в класс, виртуальные таскаютс€ с объектом. „истые виртуальные лишены реализации
-		virtual void Out(ofstream &ofst) = 0; // вывод
-
+		virtual void Out(ofstream &ofst); // вывод
+	protected:
+		number() {};
 	};
 } // end simple_numbers namespace
 #endif

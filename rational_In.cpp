@@ -9,5 +9,6 @@ namespace simple_numbers {
 
 		a = (int)A;
 		b = (int)B;
+		number::InData(ifst);
 	}
 } // end simple_shapes namespace

@@ -4,17 +4,16 @@
 using namespace std;
 
 using namespace simple_numbers;
-int main(/*int argc, char* argv[]*/) {
-	/*if (argc != 3) {
+int main(int argc, char* argv[]) {
+	if (argc != 3) {
 		cout << "incorrect command line! "
 			"Waited: command infile outfile" << endl;
 		exit(1);
 	}
 
 	ifstream ifst(argv[1]);//открытие файлов
-	ofstream ofst(argv[2]);*/
-	ifstream ifst("C:\\in.txt");//открытие файлов
-	ofstream ofst("C:\\out.txt");
+	ofstream ofst(argv[2]);
+	
 	/*char symb;
 	while (!ifst.eof())
 	{
