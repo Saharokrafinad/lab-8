@@ -5,11 +5,12 @@
 namespace simple_numbers {
 	// прямоугольник
 	class complex : public number {
-		float x, y; // действительная и мнимая части
+		int x, y; // действительная и мнимая части
 	public:
 		// переопределяем интерфейс класса
 		void InData(ifstream &ifst); // ввод
 		void Out(ofstream &ofst); // вывод
+		float ToFloat();
 		complex() {} // создание без инициализации.
 	};
 } // end simple_numbers namespace

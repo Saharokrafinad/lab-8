@@ -13,7 +13,7 @@ namespace simple_numbers {
 		virtual void InData(ifstream &ifst) = 0; // ввод “јЅЋ»÷ј ¬»–“”јЋ№Ќџ’ ‘”Ќ ÷»…, 
 		//при вызове обычных функций лезет в класс, виртуальные таскаютс€ с объектом. „истые виртуальные лишены реализации
 		virtual void Out(ofstream &ofst) = 0; // вывод
-
+		virtual float ToFloat() = 0;
 	};
 } // end simple_numbers namespace
 #endif
