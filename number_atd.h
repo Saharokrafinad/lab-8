@@ -14,6 +14,9 @@ namespace simple_numbers {
 		//при вызове обычных функций лезет в класс, виртуальные таскаются с объектом. Чистые виртуальные лишены реализации
 		virtual void Out(ofstream &ofst) = 0; // вывод
 		virtual float ToFloat() = 0;
+		// сравнение двух объектов 
+		bool Compare(number &other);
+
 	};
 } // end simple_numbers namespace
 #endif

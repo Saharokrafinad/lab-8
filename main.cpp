@@ -31,9 +31,12 @@ int main(int argc, char* argv[]) {
 	cout << "Start" << endl;
 	container* begin = new container;
 	//container con;
-
+	
 	begin->In(ifst);
 	ofst << "Filled container. " << endl;
+	begin->ToFloat(ofst);
+	begin = begin->Sort();
+	ofst << "After Sort. " << endl;
 	begin->ToFloat(ofst);
 	cout << "Stop" << endl;
 	return 0;

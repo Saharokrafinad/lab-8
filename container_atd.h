@@ -9,6 +9,7 @@ namespace simple_numbers {
 			void In(ifstream &ifst); // ввод
 			void Out(ofstream &ofst); // вывод
 			void ToFloat(ofstream &ofst);
+			container* Sort(); // сортировка контейнера
 			void Clear(); // очистка контейнера от фигур
 			container(); // инициализация контейнера
 			~container() { Clear(); } // утилизация контейнера
