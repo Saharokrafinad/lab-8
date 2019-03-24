@@ -36,6 +36,8 @@ namespace simple_numbers {
 		b = b / c;
 		ofst << "It is Rational number: "
 			<< a << "/" << b << endl;
+		number::Out(ofst); 
+		ofst << endl;
 	}
 
 	
