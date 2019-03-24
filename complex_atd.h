@@ -10,7 +10,11 @@ namespace simple_numbers {
 		// переопределяем интерфейс класса
 		void InData(ifstream &ifst); // ввод
 		void Out(ofstream &ofst); // вывод
+
 		float ToFloat();
+
+		void OutComplex(ofstream &ofst);
+
 		complex() {} // создание без инициализации.
 	};
 } // end simple_numbers namespace

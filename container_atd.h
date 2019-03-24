@@ -8,8 +8,12 @@ namespace simple_numbers {
 		public:
 			void In(ifstream &ifst); // ввод
 			void Out(ofstream &ofst); // вывод
+
 			void ToFloat(ofstream &ofst);
 			container* Sort(); // сортировка контейнера
+
+			void OutComplex(ofstream &ofst);
+
 			void Clear(); // очистка контейнера от фигур
 			container(); // инициализация контейнера
 			~container() { Clear(); } // утилизация контейнера

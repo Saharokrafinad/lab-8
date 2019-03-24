@@ -19,6 +19,8 @@ namespace simple_numbers {
 		// сравнение двух объектов 
 		bool Compare(number &other);
 		virtual void Out(ofstream &ofst); // вывод
+		
+		virtual void OutComplex(ofstream &ofst);
 	protected:
 		number() {};
 

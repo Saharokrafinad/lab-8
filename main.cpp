@@ -35,10 +35,12 @@ int main(int argc, char* argv[]) {
 	
 	begin->In(ifst);
 	ofst << "Filled container. " << endl;
+
 	begin->ToFloat(ofst);
 	begin = begin->Sort();
 	ofst << "After Sort. " << endl;
 	begin->ToFloat(ofst);
+	begin->OutComplex(ofst);
 	cout << "Stop" << endl;
 	return 0;
 }
