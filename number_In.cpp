@@ -2,6 +2,7 @@
 // Необходима подключить информацию обо всех имеющихся числах
 #include "complex_atd.h"
 #include "rational_atd.h"
+#include "pol_coor_atd.h"
 using namespace std;
 namespace simple_numbers {
 	// Ввод параметров обобщенной фигуры
@@ -16,6 +17,10 @@ namespace simple_numbers {
 			break;
 		case 2:
 			num = new rational;
+			num->InData(ifst);
+			break;
+		case 3:
+			num = new pol_coor;
 			num->InData(ifst);
 			break;
 		default:
