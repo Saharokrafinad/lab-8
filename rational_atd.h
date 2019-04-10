@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __rational_atd__
 #define __rational_atd__
 // Требеутся описание класса number
@@ -5,8 +6,9 @@
 namespace simple_numbers {
 	// прямоугольник
 	class rational : public number {
-		int a, b; // действительная и мнимая части
 	public:
+		int a, b; // действительная и мнимая части
+
 		// переопределяем интерфейс класса
 		void InData(ifstream &ifst); // ввод
 		void Out(ofstream &ofst); // вывод

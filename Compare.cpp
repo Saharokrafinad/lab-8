@@ -1,3 +1,4 @@
+
 #include "number_atd.h"
 namespace simple_numbers {
 	// сравнение двух объектов 

@@ -6,5 +6,7 @@ namespace simple_numbers {
 
 		ofst << "It is Polar coordinates: (" << phi
 			<< ", " << d << ")" << endl;
+		number::Out(ofst);
+		ofst << endl;
 	}
 } // end simple_shapes namespace

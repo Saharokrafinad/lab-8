@@ -7,5 +7,6 @@ namespace simple_numbers {
 		ifst >> phi >> D;
 
 		d = (int)D;
+		number::InData(ifst);
 	}
 } // end simple_shapes nam

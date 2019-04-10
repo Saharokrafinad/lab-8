@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __number_atd__
 #define __number_atd__
 #include <fstream>
@@ -8,8 +9,9 @@ namespace simple_numbers {
 	// проверку интерфейса
 	class number {
 	//private:
-		string ed_izm;
 	public:
+		string ed_izm;
+	
 		// иденитфикация, порождение и ввод числа из потока
 			static number* In(ifstream &ifst);
 		virtual void InData(ifstream &ifst); // ввод ТАБЛИЦА ВИРТУАЛЬНЫХ ФУНКЦИЙ, 

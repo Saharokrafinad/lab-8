@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __complex_atd__
 #define __complex_atd__
 // Требеутся описание класса number
@@ -5,8 +6,9 @@
 namespace simple_numbers {
 	// прямоугольник
 	class complex : public number {
-		int x, y; // действительная и мнимая части
+		
 	public:
+		float x, y; // действительная и мнимая части
 		// переопределяем интерфейс класса
 		void InData(ifstream &ifst); // ввод
 		void Out(ofstream &ofst); // вывод
