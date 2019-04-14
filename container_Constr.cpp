@@ -1,5 +1,6 @@
 #include "container_atd.h"
-namespace simple_numbers {
+namespace simple_numbers 
+{
 	// Инициализация контейнера
 	container::container()
 	{
@@ -7,21 +8,22 @@ namespace simple_numbers {
 		num = NULL;
 	}
 	// Очистка контейнера от элементов
-	void container::Clear() {
+	void container::clear() 
+	{
 		if (this == 0)
 			return;
-		container *p = this;//this указывает на начало списка
-		container *t;
-		if (p != nullptr)
+		container *cur = this;//this указывает на начало списка
+		container *cur_next;
+		if (cur != nullptr)
 		{
 			do
 			{
-				t = p;
-				p = p->next;
-				delete t;
-			} while (p != this);
+				cur_next = cur;
+				cur = cur->next;
+				delete cur_next;
+			} while (cur != this);
 		}
-		p = this;
-		p = NULL;
+		cur = this;
+		cur = NULL;
 	}
 } // end simple_shapes namespace

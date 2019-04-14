@@ -1,8 +1,8 @@
-
 #include "number_atd.h"
-namespace simple_numbers {
-	// сравнение двух объектов 
-	bool number::Compare(number &other) {
-		return ToFloat() < other.ToFloat();
+namespace simple_numbers 
+{
+	bool number::сompare_num(number &other)
+	{
+		return to_float() < other.to_float();
 	}
 }

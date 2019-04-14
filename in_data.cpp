@@ -3,9 +3,9 @@
 #include <string>
 using namespace std;
 namespace simple_numbers 
-{ 
-	void number::out(ofstream &ofst)
+{
+	void number::in_data(ifstream &ifst)
 	{
-		ofst << "measure = " << measure;
+		ifst >> measure;
 	}
 }

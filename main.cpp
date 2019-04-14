@@ -2,12 +2,10 @@
 #include <fstream>
 #include "container_atd.h"
 #include <string>
-
 using namespace std;
-
 using namespace simple_numbers;
-int main(int argc, char* argv[]) {
-	
+int main(int argc, char* argv[]) 
+{	
 	if (argc != 3)
 	{
 		cout << "incorrect command line! "
@@ -16,81 +14,74 @@ int main(int argc, char* argv[]) {
 	}
 	ifstream ifst(argv[1]);
 	ofstream ofst(argv[2]);
-
 	if (!ifst.is_open())
 	{
 		cout << "input file not open";
 		return 2;
 	}
-
 	if (!ofst.is_open())
 	{
 		cout << "output file not open or not create";
 		return 3;
 	}
-
 	string where_er = "";
 	int str = 0; 
 	char *buf = new char[10];
-	bool no_er = false;
 	float number_code; 
 	float param; 
 	//string measure;
- 
-
 	while (!ifst.eof())
 	{
-		switch (str % 4) {
-		case 0://проверка ключа спецификации
-			if (!(ifst >> number_code)) // число не считывается
-			{
+		switch (str % 4) 
+		{
+			case 0://проверка ключа спецификации
+				if (!(ifst >> number_code)) // число не считывается
+				{
 				
-				cout << "Error. Wrong type" << endl;
-				cout << where_er << "!!ERROR POSITION!!" << endl;
-				return 3;
-			}
-			if (number_code - (int)number_code != 0)
-			{
-				cout << "Error. Wrong type" << endl;
-				cout << where_er << "!!ERROR POSITION!!" << endl;
-				return 3;
-			}
-			if (number_code < 1 ||number_code>3)//целое считалось, но не 1,2,3
-			{
-				cout << "Error. Wrong type" << endl;
-				cout << where_er << endl << "!!ERROR POSITION!!" << endl;
-				return 3;
-			}
-			where_er += to_string((int) number_code);
-			where_er += "\n";
-			str++;
-			break;
-		case 1:
-		case 2:
-			if (!(ifst >> param))//параметр не число
-			{
-				cout << "Error. Wrong parameter" << endl;
-				cout << where_er << "!!ERROR POSITION!!" << endl;
-				return 4;
-			}
-			where_er += to_string(param);
-			where_er += "\n";
-			str++;
-			break;
-
-		case 3:
-			if (!(ifst >> buf)) //Внезапный конец файла 
-			{
-				cout << "Error. Wrong measure" << endl;
-				cout << where_er << "!!ERROR POSITION!!" << endl;
-				return 5;
-			}
-			where_er += buf;
-			where_er += "\n";
-			str++;
-			break;
-		}
-		
+					cout << "Error. Wrong type" << endl;
+					cout << where_er << "!!ERROR POSITION!!" << endl;
+					return 3;
+				}
+				if (number_code - (int)number_code != 0)
+				{
+					cout << "Error. Wrong type" << endl;
+					cout << where_er << "!!ERROR POSITION!!" << endl;
+					return 3;
+				}
+				if (number_code < 1 ||number_code>3)//целое считалось, но не 1,2,3
+				{
+					cout << "Error. Wrong type" << endl;
+					cout << where_er << endl << "!!ERROR POSITION!!" << endl;
+					return 3;
+				}
+				where_er += to_string((int) number_code);
+				where_er += "\n";
+				str++;
+				break;
+			case 1:
+			case 2:
+				if (!(ifst >> param))//параметр не число
+				{
+					cout << "Error. Wrong parameter" << endl;
+					cout << where_er << "!!ERROR POSITION!!" << endl;
+					return 4;
+				}
+				where_er += to_string(param);
+				where_er += "\n";
+				str++;
+				break;
+			case 3:
+				if (!(ifst >> buf)) //Внезапный конец файла 
+				{
+					cout << "Error. Wrong measure" << endl;
+					cout << where_er << "!!ERROR POSITION!!" << endl;
+					return 5;
+				}
+				where_er += buf;
+				where_er += "\n";
+				str++;
+				break;
+		}		
 	}
 	if ((str - 1) % 4 != 3) 
 	{
@@ -98,25 +89,17 @@ int main(int argc, char* argv[]) {
 		return 6;
 
 	}
-
-	//Проверка оконечна без ошибок
-
 	ifst.close();
 	ifst.open(argv[1]);
-
-
 	cout << "Start" << endl;
 	container* begin = new container;
-	//container con;
-	
-	begin->In(ifst);
+	begin->in(ifst);
 	ofst << "Filled container. " << endl;
-
-	begin->ToFloat(ofst);
-	begin = begin->Sort();
+	begin->to_float(ofst);
+	begin = begin->sort();
 	ofst << "After Sort. " << endl;
-	begin->ToFloat(ofst);
-	begin->OutComplex(ofst);
+	begin->to_float(ofst);
+	begin->filter_complex(ofst);
 	cout << "Stop" << endl;
 	return 0;
 }

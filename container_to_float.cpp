@@ -1,8 +1,7 @@
 #include "container_atd.h"
-using namespace std;
-namespace simple_numbers 
+namespace simple_numbers
 {
-	void container::out(ofstream &ofst)
+	void container::to_float(ofstream &ofst)
 	{
 		container *cur = this;
 		int i = 1;
@@ -24,9 +23,10 @@ namespace simple_numbers
 			{
 				ofst << i << ": ";
 				cur->num->out(ofst); 
+				ofst << " float form: " << cur->num->to_float() << endl;
 				cur = cur->next;
 				i++;
 			} while (cur != this);
 		}
 	}
-} // end simple_shapes namespace
+}

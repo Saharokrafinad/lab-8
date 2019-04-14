@@ -1,10 +1,8 @@
 #include "rational_atd.h"
-
 using namespace std;
-namespace simple_numbers {
-	// Вывод параметров прямоугольника
-	
-	int GCD(int a, int b)
+namespace simple_numbers 
+{
+	int gcd(int a, int b)
 	{
 		while (a != 1 && b != 1 && a*b != 0)
 		{
@@ -24,21 +22,16 @@ namespace simple_numbers {
 		else
 		{
 			return a + b;
-		}
-
-		
-
+		}	
 	}
-	void rational::Out(ofstream &ofst) {
-		//int GCD(int a, int b);
-		int c = GCD(a, b);
-		a = a / c;
-		b = b / c;
+	void rational::out(ofstream &ofst) 
+	{
+		int c = gcd(chis, znam);
+		chis = chis / c;
+		znam = znam / c;
 		ofst << "It is Rational number: "
-			<< a << "/" << b << endl;
-		number::Out(ofst); 
+			<< chis << "/" << znam << endl;
+		number::out(ofst); 
 		ofst << endl;
 	}
-
-	
 } // end simple_shapes namespace
