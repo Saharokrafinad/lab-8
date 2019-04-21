@@ -14,6 +14,7 @@ namespace simple_numbers
 		void to_float(ofstream &ofst);
 		container* sort(); // сортировка контейнера
 		void filter_complex(ofstream &ofst);
+		void multi_method(container **begin, ofstream &ofst);
 		void clear(); // очистка контейнера от фигур
 		container(); // инициализация контейнера
 		~container() { clear(); } // утилизация контейнера

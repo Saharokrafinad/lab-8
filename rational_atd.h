@@ -10,6 +10,10 @@ namespace simple_numbers {
 		// переопределяем интерфейс класса
 		void in_data(ifstream &ifst); // ввод
 		void out(ofstream &ofst); // вывод
+		void multi_method(number *other, ofstream &ofst);
+		void mm_complex(ofstream &ofst);
+		void mm_rational(ofstream &ofst);
+		void mm_pol_coor(ofstream &ofst);
 		float to_float();
 		rational() {} // создание без инициализации.
 	};

@@ -96,6 +96,7 @@ int main(int argc, char* argv[])
 	begin->in(ifst);
 	ofst << "Filled container. " << endl;
 	begin->to_float(ofst);
+	begin->multi_method(&begin, ofst);
 	begin = begin->sort();
 	ofst << "After Sort. " << endl;
 	begin->to_float(ofst);
